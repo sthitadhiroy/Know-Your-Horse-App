@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
 
   btnsubmit: {
     marginTop: 30,
-    width: windowWidth * 0.9,
+    width: windowWidth * 0.2,
     backgroundColor: '#ff5203',
     height: 95,
     fontSize: 16,

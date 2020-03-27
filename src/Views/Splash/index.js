@@ -24,7 +24,7 @@ class Splash extends Component {
     return (
       <ImageBackground
         style={{width: '100%', height: '100%'}}
-        source={require('../../Images/splash.jpg')}>
+        source={require('../../Images/opening.jpeg')}>
         <View style={styles.container}>
           <View style={{padding: 10}} />
           <Image

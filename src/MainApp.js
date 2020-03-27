@@ -10,7 +10,9 @@ import Splash from './Views/Splash/index';
 import Landing from './Views/Landing/index';
 import Login from './Views/Login/index';
 import Registration from './Views/Registration/index';
+import Menu from './Views/Menu/index';
 import MainPage from './Views/MainPage';
+import TriviaPage from './Views/TriviaPage/index';
 
 const navigationOptions = {header: null};
 
@@ -52,12 +54,30 @@ const registrationStack = createStackNavigator(
     navigationOptions,
   },
 );
+const menuStack = createStackNavigator(
+  {
+    Menu: {screen: Menu, navigationOptions},
+  },
+  {
+    initialRouteName: 'Menu',
+    navigationOptions,
+  },
+);
 const mainPageStack = createStackNavigator(
   {
     MainPage: {screen: MainPage, navigationOptions},
   },
   {
     initialRouteName: 'MainPage',
+    navigationOptions,
+  },
+);
+const triviaPageStack = createStackNavigator(
+  {
+    TriviaPage: {screen: TriviaPage, navigationOptions},
+  },
+  {
+    initialRouteName: 'TriviaPage',
     navigationOptions,
   },
 );
@@ -68,7 +88,9 @@ const Routes = createStackNavigator(
     Landing: {screen: landingStack},
     LogIn: {screen: logInStack},
     Registration: {screen: registrationStack},
+    Menu: {screen: menuStack},
     MainPage: {screen: mainPageStack},
+    TriviaPage: {screen: triviaPageStack},
   },
   {
     initialRouteName: 'unauthorized',

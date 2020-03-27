@@ -2,7 +2,8 @@ import React from 'react';
 import {View, Text, ScrollView, ImageBackground} from 'react-native';
 import quiz from '../../quizService';
 import Question from './question';
-import {Divider, CheckBox, Header} from 'react-native-elements';
+import {Button, Overlay, Header, Image} from 'react-native-elements';
+import picture from '../../Images/overlay.jpeg';
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -12,7 +13,10 @@ class MainPage extends React.Component {
       loading: false,
       data: [],
       score: 0,
+      isVisible: false,
     };
+
+    this.overlayy = this.overlayy.bind(this);
     this.incrementScore = this.incrementScore.bind(this);
   }
 
@@ -24,12 +28,19 @@ class MainPage extends React.Component {
   incrementScore() {
     this.setState({score: this.state.score + 1});
   }
+  overlayy() {
+    this.setState({isVisible: true});
+  }
+  FunctionToConfirm = () => {
+    this.setState({isVisible: false});
+    this.props.navigation.navigate('Menu');
+  };
 
   render() {
     return (
       <ScrollView>
         <ImageBackground
-          source={require('../../Images/quizbc.jpg')}
+          source={require('../../Images/quizpage104.jpeg')}
           style={{width: '100%', height: '100%'}}>
           <Header
             containerStyle={{
@@ -56,10 +67,39 @@ class MainPage extends React.Component {
             ))}
           </View>
           <View style={{padding: 10}} />
+          <Overlay
+            isVisible={this.state.isVisible}
+            onBackdropPress={() => this.setState({isVisible: false})}>
+            <View>
+              <View style={{height: '60%'}}>
+                <Image source={picture} style={{width: 250, height: 250}} />
+              </View>
+              <View style={{padding: 10}} />
+              <Text
+                h1
+                style={{
+                  padding: 7,
+                  fontWeight: 'bold',
+                  textAlign: 'center',
+                }}>
+                Score
+              </Text>
+              <Text
+                h1
+                style={{
+                  padding: 7,
+                  fontWeight: 'bold',
+                  textAlign: 'center',
+                }}>
+                {this.state.score}/5
+              </Text>
+              <View style={{padding: 30}} />
+
+              <Button title="Play Again..!!" onPress={this.FunctionToConfirm} />
+            </View>
+          </Overlay>
           <View style={{padding: 20, borderWidth: 2, borderRadius: 20}}>
-            <Text style={{textAlign: 'center'}}>
-              Your Score is {this.state.score}/5
-            </Text>
+            <Button title="Results" onPress={this.overlayy} />
           </View>
           <View style={{padding: 10}} />
         </ImageBackground>

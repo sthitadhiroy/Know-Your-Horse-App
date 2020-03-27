@@ -36,7 +36,7 @@ class Login extends Component {
   render() {
     return (
       <ImageBackground
-        source={require('../../Images/normal.jpeg')}
+        source={require('../../Images/login101.jpeg')}
         style={{width: '100%', height: '100%'}}>
         <Container style={{flex: 1, backgroundColor: 'transparent'}}>
           <Image
@@ -53,13 +53,13 @@ class Login extends Component {
           <View style={styles.container}>
             <View style={{width: '100%', padding: 20}}>
               <TextInput
-                placeholder="User Id"
+                placeholder="User Name"
                 style={{
                   width: '100%',
                   backgroundColor: 'white',
                   borderColor: 'grey',
                   borderWidth: 1,
-                  padding: 10,
+                  padding: 8,
                 }}
               />
             </View>
@@ -71,7 +71,7 @@ class Login extends Component {
                   backgroundColor: 'white',
                   borderColor: 'grey',
                   borderWidth: 1,
-                  padding: 10,
+                  padding: 8,
                 }}
                 secureTextEntry={true}
               />

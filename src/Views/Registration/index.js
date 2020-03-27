@@ -35,12 +35,12 @@ import styles from './regStyles';
 
 class Registration extends Component {
   FunctionToSubmit = () => {
-    this.props.navigation.navigate('MainPage');
+    this.props.navigation.navigate('Menu');
   };
   render() {
     return (
       <ImageBackground
-        source={require('../../Images/normal.jpeg')}
+        source={require('../../Images/regis101.jpeg')}
         style={{width: '100%', height: '100%'}}>
         <Container style={{flex: 1, backgroundColor: 'transparent'}}>
           <KeyboardAwareScrollView
@@ -70,7 +70,7 @@ class Registration extends Component {
                       backgroundColor: 'white',
                       borderColor: 'grey',
                       borderWidth: 1,
-                      padding: 10,
+                      padding: 8,
                     }}
                   />
                 </View>
@@ -85,7 +85,7 @@ class Registration extends Component {
                       backgroundColor: 'white',
                       borderColor: 'grey',
                       borderWidth: 1,
-                      padding: 10,
+                      padding: 8,
                     }}
                   />
                 </View>
@@ -100,7 +100,7 @@ class Registration extends Component {
                       backgroundColor: 'white',
                       borderColor: 'grey',
                       borderWidth: 1,
-                      padding: 10,
+                      padding: 8,
                     }}
                   />
                 </View>
@@ -115,20 +115,23 @@ class Registration extends Component {
                       backgroundColor: 'white',
                       borderColor: 'grey',
                       borderWidth: 1,
-                      padding: 10,
+                      padding: 8,
                     }}
                     secureTextEntry={true}
                   />
                 </View>
               </View>
               <View style={{padding: 10}} />
-              <Button
-                primary
-                title="SUBMIT"
-                style={styles.btnsubmit}
-                textStyle={styles.textStyle}
-                onPress={this.FunctionToSubmit}
-              />
+
+              <View>
+                <Button
+                  primary
+                  title="SUBMIT"
+                  style={styles.btnsubmit}
+                  textStyle={styles.textStyle}
+                  onPress={this.FunctionToSubmit}
+                />
+              </View>
             </View>
           </KeyboardAwareScrollView>
         </Container>

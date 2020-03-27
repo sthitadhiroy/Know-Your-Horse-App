@@ -17,17 +17,17 @@ import {Container, Header, Left, Right, Body, Title} from 'native-base';
 
 import styles from './styles';
 
-class Landing extends Component {
-  FunctionToLogin = () => {
-    this.props.navigation.navigate('Login');
+class Menu extends Component {
+  FunctionToTrivia = () => {
+    this.props.navigation.navigate('TriviaPage');
   };
-  FunctionToRegister = () => {
-    this.props.navigation.navigate('Registration');
+  FunctionToQuiz = () => {
+    this.props.navigation.navigate('MainPage');
   };
   render() {
     return (
       <ImageBackground
-        source={require('../../Images/landing002.jpeg')}
+        source={require('../../Images/menu106.jpeg')}
         style={{width: '100%', height: '100%'}}>
         <Container
           style={{
@@ -52,16 +52,16 @@ class Landing extends Component {
               marginTop: 70,
             }}>
             <Button
-              title="Sign In"
+              title="Trivia About Horse"
               style={styles.btndealer}
-              onPress={this.FunctionToLogin}
+              onPress={this.FunctionToTrivia}
               textStyle={styles.textStyle}
             />
             <View style={{padding: 10}} />
             <Button
-              title="Sign Up"
+              title="Quiz From Horse"
               style={styles.btndealer}
-              onPress={this.FunctionToRegister}
+              onPress={this.FunctionToQuiz}
               textStyle={styles.textStyle}
             />
           </View>
@@ -71,4 +71,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+export default Menu;
