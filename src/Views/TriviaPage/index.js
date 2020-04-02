@@ -16,6 +16,9 @@ import {Container, Left, Right, Body, Title} from 'native-base';
 import {ScrollView} from 'react-native-gesture-handler';
 
 class TriviaPage extends Component {
+  FunctionToConfirm = () => {
+    this.props.navigation.navigate('Menu');
+  };
   render() {
     return (
       <ImageBackground
@@ -369,6 +372,13 @@ class TriviaPage extends Component {
               }}
               source={require('../../Images/25.webp')}
             />
+            <View style={{padding: 5}} />
+            <View style={{padding: 20}}>
+              <Button
+                title="Test your knowledge ? "
+                onPress={this.FunctionToConfirm}
+              />
+            </View>
             <View style={{padding: 10}} />
           </View>
         </ScrollView>
