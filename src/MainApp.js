@@ -10,6 +10,7 @@ import Splash from './Views/Splash/index';
 import Landing from './Views/Landing/index';
 import Login from './Views/Login/index';
 import Registration from './Views/Registration/index';
+import TermsandC from './Views/Terms&Conditions/index';
 import Menu from './Views/Menu/index';
 import MainPage from './Views/MainPage';
 import TriviaPage from './Views/TriviaPage/index';
@@ -54,6 +55,15 @@ const registrationStack = createStackNavigator(
     navigationOptions,
   },
 );
+const termsandCStack = createStackNavigator(
+  {
+    TermsandC: {screen: TermsandC, navigationOptions},
+  },
+  {
+    initialRouteName: 'TermsandC',
+    navigationOptions,
+  },
+);
 const menuStack = createStackNavigator(
   {
     Menu: {screen: Menu, navigationOptions},
@@ -88,6 +98,7 @@ const Routes = createStackNavigator(
     Landing: {screen: landingStack},
     LogIn: {screen: logInStack},
     Registration: {screen: registrationStack},
+    TermsandC: {screen: termsandCStack},
     Menu: {screen: menuStack},
     MainPage: {screen: mainPageStack},
     TriviaPage: {screen: triviaPageStack},
